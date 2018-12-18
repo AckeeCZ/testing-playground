@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "commonjs",
+        "jsx": "preserve",
+        "baseUrl": "./src",
+        "paths": {
+            "Src/*": ["*"],
+            "Components/*": ["components/*"],
+            "Config/*": ["config/*"],
+            "Containers/*": ["containers/*"],
+            "Consts/*": ["constants/*"],
+            "Constants/*": ["constants/*"],
+            "HOC/*": ["HOC/*"],
+            "Localization/*": ["localization/*"],
+            "Modules/*": ["modules/*"],
+            "Services/*": ["services/*"],
+            "Actions/*": ["services/actions/*"],
+            "ActionTypes/*": ["services/actionTypes/*"],
+            "Reducers/*": ["services/reducers/*"],
+            "Sagas/*": ["services/sagas/*"],
+            "Selectors/*": ["services/selectors/*"],
+            "Utils/*": ["services/utilities/*"],
+            "Utilities/*": ["services/utilities/*"],
+            "Styles/*": ["styles/*"]
+        }
+    },
+    "include": ["src/**/*"]
+}
