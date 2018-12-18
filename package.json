@@ -82,7 +82,7 @@
     "husky": {
         "hooks": {
             "pre-commit": "lint-staged",
-            "pre-push": "react-scripts analyze-dependencies --circular && npm run test"
+            "pre-push": "react-scripts analyze-dependencies --circular && npm run test && npm run cypress:run"
         }
     },
     "lint-staged": {

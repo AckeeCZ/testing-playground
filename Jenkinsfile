@@ -2,7 +2,7 @@ PipelineReact {
     projectName = 'Playground'
     slackChannel = '#ci-web'
     buildCommand = [
-        master: 'npm install && npm test && npm run build:prod',
+        master: 'npm install && npm run cypress:run && npm test && npm run build:prod',
     ]
     baseURL = 'playground'
     buildDir = 'build'
