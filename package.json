@@ -46,6 +46,7 @@
         "eject": "react-scripts eject",
         "analyze-dependencies": "react-scripts analyze-dependencies --circular",
         "create-module": "hygen module new --name $1",
+        "cypress:run": "cypress run",
         "cypress:open": "cypress open",
         "test:coverage": "npm run test -- --collectCoverage",
         "test:coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
