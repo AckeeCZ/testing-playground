@@ -1,6 +1,6 @@
 PipelineReact {
     projectName = 'Playground'
-    slackChannel = '#ci-${projectName}'
+    slackChannel = '#ci-web'
     buildCommand = [
         master: 'npm install && npm test && npm run build:prod',
     ]
