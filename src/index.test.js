@@ -1,4 +1,4 @@
 // TODO: add unit tests
 it('', () => {
-    a.col;
+    a.cole;
 });
