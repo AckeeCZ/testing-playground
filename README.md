@@ -1,3 +1,6 @@
+![ackee|Playground](https://img.ack.ee/ackee/image/github/js)
+# [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/AckeeCZ/testing-playground/blob/master/LICENSE) [![CI Status](https://img.shields.io/travis/com/AckeeCZ/testing-playground.svg?style=flat)](https://travis-ci.com/AckeeCZ/testing-playground) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://reactjs.org/docs/how-to-contribute.html#your-first-pull-request) [![Coverage Status](https://img.shields.io/coveralls/github/AckeeCZ/testing-playground.svg?style=flat-square)](https://coveralls.io/github/AckeeCZ/testing-playground?branch=master) [![Dependency Status](https://img.shields.io/david/AckeeCZ/testing-playground.svg?style=flat-square)](https://david-dm.org/AckeeCZ/testing-playground)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Global table of contents
