@@ -1,94 +1,94 @@
 {
-  "name": "testing-playground",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@ackee/antonio": "2.x",
-    "@ackee/jerome": "0.x",
-    "@ackee/petrus": "3.x",
-    "@ackee/react-scripts": "0.6.5",
-    "@sentry/browser": "4.x",
-    "ackee-frontend-toolkit": "0.x",
-    "antd": "3.x",
-    "connected-react-router": "6.x",
-    "fela": "10.x",
-    "fela-monolithic": "10.x",
-    "history": "4.x",
-    "localforage": "1.x",
-    "lodash": "4.x",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
-    "react-fela": "10.x",
-    "react-intl": "2.x",
-    "react-redux": "6.x",
-    "react-router-dom": "4.x",
-    "redux": "4.x",
-    "redux-form": "8.x",
-    "redux-saga": "0.x",
-    "reselect": "4.x"
-  },
-  "devDependencies": {
-    "fela-plugin-validator": "10.x",
-    "husky": "1.x",
-    "hygen": "1.x",
-    "imagemin-lint-staged": "0.x",
-    "lint-staged": "8.x"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "npm run build:dev",
-    "build:dev": "react-scripts build --target=development",
-    "build:stage": "react-scripts build --target=stage",
-    "build:prod": "react-scripts build --target=production",
-    "test:watch": "react-scripts test",
-    "test": "cross-env CI=true react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "analyze-dependencies": "react-scripts analyze-dependencies --circular",
-    "create-module": "hygen module new --name $1",
-    "cypress:open": "cypress open"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "ackee",
-      "prettier"
+    "name": "testing-playground",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@ackee/antonio": "2.x",
+        "@ackee/jerome": "0.x",
+        "@ackee/petrus": "3.x",
+        "@ackee/react-scripts": "0.6.5",
+        "@sentry/browser": "4.x",
+        "ackee-frontend-toolkit": "0.x",
+        "antd": "3.x",
+        "connected-react-router": "6.x",
+        "fela": "10.x",
+        "fela-monolithic": "10.x",
+        "history": "4.x",
+        "localforage": "1.x",
+        "lodash": "4.x",
+        "react": "^16.6.3",
+        "react-dom": "^16.6.3",
+        "react-fela": "10.x",
+        "react-intl": "2.x",
+        "react-redux": "6.x",
+        "react-router-dom": "4.x",
+        "redux": "4.x",
+        "redux-form": "8.x",
+        "redux-saga": "0.x",
+        "reselect": "4.x"
+    },
+    "devDependencies": {
+        "fela-plugin-validator": "10.x",
+        "husky": "1.x",
+        "hygen": "1.x",
+        "imagemin-lint-staged": "0.x",
+        "lint-staged": "8.x"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "npm run build:dev",
+        "build:dev": "react-scripts build --target=development",
+        "build:stage": "react-scripts build --target=stage",
+        "build:prod": "react-scripts build --target=production",
+        "test:watch": "react-scripts test",
+        "test": "cross-env CI=true react-scripts test --env=jsdom",
+        "eject": "react-scripts eject",
+        "analyze-dependencies": "react-scripts analyze-dependencies --circular",
+        "create-module": "hygen module new --name $1",
+        "cypress:open": "cypress open"
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "ackee",
+            "prettier"
+        ],
+        "settings": {
+            "import/resolver": {
+                "webpack": {
+                    "config": "./node_modules/@ackee/react-scripts/config/webpack.config.dev.js"
+                }
+            }
+        },
+        "env": {
+            "browser": true,
+            "jest": true,
+            "cypress/globals": true
+        },
+        "plugins": [
+            "cypress"
+        ]
+    },
+    "browserslist": [
+        ">0.2%",
+        "not dead",
+        "not ie <= 11",
+        "not op_mini all"
     ],
-    "settings": {
-      "import/resolver": {
-        "webpack": {
-          "config": "./node_modules/@ackee/react-scripts/config/webpack.config.dev.js"
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged",
+            "pre-push": "react-scripts analyze-dependencies --circular"
         }
-      }
     },
-    "env": {
-      "browser": true,
-      "jest": true,
-      "cypress/globals": true
-    },
-    "plugins": [
-      "cypress"
-    ]
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "react-scripts analyze-dependencies --circular && npm run test"
+    "lint-staged": {
+        "*.{js,jsx,json,scss,less,css,md}": [
+            "prettier --config ./prettier.config.js --write",
+            "git add"
+        ],
+        "**/*.{png,jpeg,jpg,gif,svg}": [
+            "imagemin-lint-staged",
+            "git add"
+        ]
     }
-  },
-  "lint-staged": {
-    "*.{js,jsx,json,scss,less,css,md}": [
-      "prettier --config ./prettier.config.js --write",
-      "git add"
-    ],
-    "**/*.{png,jpeg,jpg,gif,svg}": [
-      "imagemin-lint-staged",
-      "git add"
-    ]
-  }
 }
