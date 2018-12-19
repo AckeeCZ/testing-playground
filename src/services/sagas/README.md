@@ -6,7 +6,7 @@ Please respect rules below when you are connecting / adding a new saga.
 
 ## `ackeeToolkit/`
 
-This folder should launch only sagas from [`ackee-frontend-toolkit`](https://gitlab.ack.ee/Web/frontend-toolkit).
+This folder should launch only sagas from [`ackee-frontend-toolkit`](https://github.com/AckeeCZ/foolkit).
 
 ## `modules/`
 
@@ -34,7 +34,7 @@ const routingHandlers = combineDependenciesHandlers({
 });
 ```
 
-More about `combineDependenciesHandlers` utility and how it works, you can find [here](https://gitlab.ack.ee/Web/frontend-toolkit/blob/development/docs/sagas/combineDependenciesHandlers.md).
+More about `combineDependenciesHandlers` utility and how it works, you can find [here](https://github.com/AckeeCZ/foolkit/blob/development/docs/sagas/combineDependenciesHandlers.md).
 
 ## `authSaga.js`
 
