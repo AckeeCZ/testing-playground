@@ -38,7 +38,7 @@ which receives fonts and static CSS files with CSS reset (optional). Then the re
 
 > You can add a Fela plugin or enhancer in `config/index.js` file.
 
-### [`localization`](https://gitlab.ack.ee/Web/frontend-toolkit/tree/master/src/modules/localization)
+### [`localization`](https://github.com/AckeeCZ/foolkit/tree/master/src/modules/localization)
 
 Initialize `translatable` HOC and `localizationReducerFactory` reducer from the `localization` module placed at `ackee-frontend-toolkit`
 
