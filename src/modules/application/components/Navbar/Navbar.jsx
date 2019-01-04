@@ -1,21 +1,21 @@
-import { React, FelaComponent, PropTypes } from '../../dependencies';
-
-import NavItem from './NavItem';
-
-import rule from './Navbar.rule';
+import { React, PropTypes, Menu, FormattedMessage, Link } from '../../dependencies';
 
 const Navbar = ({ navItems }) => {
     return (
-        <FelaComponent style={rule}>
+        <Menu theme="dark" mode="horizontal" style={{ lineHeight: '64px' }}>
             {navItems.map(navItem => (
-                <NavItem key={navItem.to} {...navItem} />
+                <Menu.Item key={navItem.messageId}>
+                    <Link to={navItem.to}>
+                        <FormattedMessage id={navItem.messageId} />
+                    </Link>
+                </Menu.Item>
             ))}
-        </FelaComponent>
+        </Menu>
     );
 };
 
 Navbar.propTypes = {
-    navItems: PropTypes.arrayOf(PropTypes.shape(NavItem.propTypes).isRequired).isRequired,
+    navItems: PropTypes.arrayOf(PropTypes.shape().isRequired).isRequired,
 };
 
 export default Navbar;
