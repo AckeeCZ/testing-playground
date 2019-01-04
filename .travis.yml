@@ -5,3 +5,4 @@ script:
 - npm run analyze-dependencies
 - npm run test:coverage
 - npm run test:coveralls
+- npm run cypress:run
