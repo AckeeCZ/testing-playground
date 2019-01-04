@@ -1,15 +1,9 @@
-import { React, PropTypes, Form, Field, Input, Button, FelaComponent } from '../dependencies';
+import { React, PropTypes, Form, Field, Input, FelaComponent, Alert } from '../dependencies';
 
-const rule = props => ({
-    fontSize: '150px',
-    color: 'red',
-});
+import { rule } from './LoginForm.rule';
 
 const LoginForm = ({ handleSubmit, intl, submitting, error }) => (
-    <div>
-        <FelaComponent style={rule} as="h1">
-            ahoj
-        </FelaComponent>
+    <FelaComponent rule={rule}>
         <Form onSubmit={handleSubmit}>
             <Field
                 disabled={submitting}
@@ -29,13 +23,16 @@ const LoginForm = ({ handleSubmit, intl, submitting, error }) => (
                 label={intl.formatMessage({ id: 'login.password' })}
                 withLabel
             />
-
-            <Button type="primary" disabled={submitting} id="submitButton">
-                {intl.formatMessage({ id: 'login.submit' })}
-            </Button>
-            {error && <p>{error}</p>}
+            <input
+                type="submit"
+                className="ant-btn ant-btn-primary"
+                disabled={submitting}
+                id="submitButton"
+                value={intl.formatMessage({ id: 'login.submit' })}
+            />
+            {error && <Alert message={error} type="error" className="logError" style={{ marginTop: '15px' }} />}
         </Form>
-    </div>
+    </FelaComponent>
 );
 
 LoginForm.propTypes = {

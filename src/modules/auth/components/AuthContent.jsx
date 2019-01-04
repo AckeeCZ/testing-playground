@@ -7,8 +7,10 @@ const texts = {
 function AuthContent({ logout, userEmail }) {
     return (
         <>
-            <div>Signed in user: {userEmail}</div>
-            <button type="button" onClick={logout}>
+            <div>
+                Signed in user: <span id="userEmail">{userEmail}</span>
+            </div>
+            <button id="logoutBtn" type="button" onClick={logout}>
                 {texts.logout}
             </button>
         </>

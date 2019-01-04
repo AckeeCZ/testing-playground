@@ -10,5 +10,6 @@ export { authApi, api } from 'Config/antonio';
 export { default as Input } from 'Components/FormFields/Input';
 
 export { default as Button } from 'antd/es/button';
+export { default as Alert } from 'antd/es/alert';
 
 export * from 'Modules/sharedDependencies';

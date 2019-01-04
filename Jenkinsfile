@@ -1,7 +1,7 @@
 PipelineReact {
   slackChannel = '#ci-web'
   buildCommand = [
-    master: 'npm install && npm run build',
+    master: 'npm install && npm run cypress:run && npm run build',
   ]
   baseURL = 'frontend-playground'
   buildDir = 'build'

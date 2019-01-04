@@ -1,4 +1,4 @@
-const appName = process.env.REACT_APP_NAME;
+const appName = 'abibuch' || process.env.REACT_APP_NAME;
 
 const config = {
     api: {

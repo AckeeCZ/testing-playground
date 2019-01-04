@@ -1,4 +1,4 @@
-import { React, PropTypes, RendererProvider, ThemeProvider, createRenderer } from '../dependencies';
+import { React, PropTypes, Provider, ThemeProvider, createRenderer } from '../dependencies';
 
 import { applyStaticCSS, applyFonts } from '../utilities';
 import config from '../config';
@@ -10,9 +10,9 @@ const Fela = ({ staticCSS, theme, reset, children, fonts }) => {
     applyFonts(renderer, fonts);
 
     return (
-        <RendererProvider renderer={renderer}>
+        <Provider renderer={renderer}>
             <ThemeProvider theme={theme}>{children}</ThemeProvider>
-        </RendererProvider>
+        </Provider>
     );
 };
 

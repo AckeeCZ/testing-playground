@@ -11,14 +11,14 @@
         "ackee-frontend-toolkit": "0.x",
         "antd": "3.x",
         "connected-react-router": "6.x",
-        "fela": "10.x",
-        "fela-monolithic": "10.x",
+        "fela": "^6.2.3",
+        "fela-monolithic": "^5.0.28",
         "history": "4.x",
         "localforage": "1.x",
         "lodash": "4.x",
         "react": "^16.6.3",
         "react-dom": "^16.6.3",
-        "react-fela": "10.x",
+        "react-fela": "^8.0.4",
         "react-intl": "2.x",
         "react-redux": "6.x",
         "react-router-dom": "4.x",
@@ -33,7 +33,8 @@
         "husky": "1.x",
         "hygen": "1.x",
         "imagemin-lint-staged": "0.x",
-        "lint-staged": "8.x"
+        "lint-staged": "8.x",
+        "wait-on": "^3.2.0"
     },
     "scripts": {
         "start": "react-scripts start",
@@ -46,7 +47,7 @@
         "eject": "react-scripts eject",
         "analyze-dependencies": "react-scripts analyze-dependencies --circular",
         "create-module": "hygen module new --name $1",
-        "cypress:run": "cypress run",
+        "cypress:run": "react-scripts start & wait-on http://localhost:3000; cypress run",
         "cypress:open": "cypress open",
         "test:coverage": "npm run test -- --collectCoverage",
         "test:coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"

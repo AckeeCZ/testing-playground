@@ -5,36 +5,15 @@ import { FelaComponent } from 'react-fela';
 
 import * as rules from './Input.rules';
 
-const InputField = ({
-    input,
-    label,
-    id,
-    disabled,
-    meta: { error, touched },
-    type,
-    withLabel,
-    style,
-    small,
-}) => {
+const InputField = ({ input, label, id, disabled, meta: { error, touched }, type, withLabel, style, small }) => {
     const showError = touched && error;
 
     return (
-        <FelaComponent
-            {...{
-                showError,
-                small,
-                rule: rules.formInput,
-            }}
-        >
+        <FelaComponent showError={showError} small={small} style={rules.formInput}>
             {withLabel && (
-                <FelaComponent
-                    {...{
-                        rule: rules.formLabel,
-                        render: ({ className }) => (
-                            <label htmlFor={id}>{label}</label>
-                        ),
-                    }}
-                />
+                <FelaComponent style={rules.formLabel}>
+                    <label htmlFor={id}>{label}</label>
+                </FelaComponent>
             )}
 
             <Input
