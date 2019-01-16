@@ -1,9 +1,9 @@
 import { React, FelaComponent, FormattedMessage } from '../dependencies';
 
-import * as rules from './ErrorMessage.rules';
+import * as styles from './ErrorMessage.styles';
 
 const ErrorMessage = () => (
-    <FelaComponent style={rules.message}>
+    <FelaComponent style={styles.message}>
         <FormattedMessage id="error.general" />
     </FelaComponent>
 );

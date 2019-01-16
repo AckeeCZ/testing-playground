@@ -1,5 +1,4 @@
-export const rule = props => ({
-    backgroundColor: 'red',
+export const loginForm = props => ({
     '& button': {
         margin: '10px 0',
     },

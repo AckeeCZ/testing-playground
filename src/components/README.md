@@ -43,8 +43,7 @@ Required files:
 Optional files:
 
 -   `ComponentName.scss` - SASS styles
--   `ComponentName.styles.js` - CSS modules
--   `ComponentName.rules.js` - Fela
+-   `ComponentName.styles.js` - CSS modules, Fela (rules, styles objects)
 -   `ComponentName.test.js` - tests
 -   `ComponentName.md` - documentation
 -   etc.

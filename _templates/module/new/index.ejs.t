@@ -1,8 +1,7 @@
 ---
 to: src/modules/<%= name %>/index.js
 ---
-export { default as <%= h.componentName(name) %>Container } from './containers/<%= h.componentName(name) %>';
-export { default as <%= h.componentName(name) %> } from './components/<%= h.componentName(name) %>';
+export { default as <%= h.componentName(name) %> } from './containers/<%= h.componentName(name) %>';
 
 export * as actions from './services/actions';
 export { default as actionTypes } from './services/actionTypes';

@@ -6,6 +6,6 @@ export { createSelector } from 'reselect';
 export { createType } from 'ackee-frontend-toolkit/es/helpers';
 export { runSagas } from 'ackee-frontend-toolkit/es/sagas/routing';
 
-export { api } from 'Config/http-client';
+export { api } from 'Config/antonio';
 
 export * from 'Modules/sharedDependencies';

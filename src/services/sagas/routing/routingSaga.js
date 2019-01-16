@@ -1,15 +1,10 @@
 import { take } from 'redux-saga/effects';
-import { runRouteActions } from 'ackee-frontend-toolkit/es/sagas/routing';
-import { routingSelector } from 'ackee-frontend-toolkit/es/selectors';
+import { routingSelector, runRouteDependencies } from '@ackee/chris';
 import { LOCATION_CHANGE } from 'connected-react-router';
 
 import { shouldRunRouteActions } from '../utilities';
 
-export default function* routingSaga(
-    handlers,
-    customOptions = {},
-    selector = routingSelector,
-) {
+export default function* routingSaga(handlers, customOptions = {}, selector = routingSelector) {
     const options = {
         skipEqualLocations: false,
         initialTrigger: true,
@@ -18,7 +13,7 @@ export default function* routingSaga(
 
     // initial trigger
     if (options.initialTrigger) {
-        yield runRouteActions(handlers, selector);
+        yield runRouteDependencies(handlers, selector);
     }
 
     let prevAction = {
@@ -28,14 +23,8 @@ export default function* routingSaga(
     while (true) {
         const action = yield take(LOCATION_CHANGE);
 
-        if (
-            shouldRunRouteActions(
-                prevAction,
-                action,
-                options.skipEqualLocations,
-            )
-        ) {
-            yield runRouteActions(handlers, selector);
+        if (shouldRunRouteActions(prevAction, action, options.skipEqualLocations)) {
+            yield runRouteDependencies(handlers, selector);
         }
 
         prevAction = action;

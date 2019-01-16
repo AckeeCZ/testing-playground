@@ -6,6 +6,7 @@ import {
     createSagaMiddleware,
     Consts,
     Sentry,
+    sentryMiddleware,
 } from '../dependencies';
 
 import createRootReducer from './createRootReducer';
@@ -21,7 +22,10 @@ const configureStore = ({ initialState, reducers, saga, middlewares: customMiddl
             Sentry.captureException(e);
         },
     });
-    const middlewares = [routerMiddlewareWithHistory, sagaMiddleware].concat(customMiddlewares);
+
+    const middlewares = [routerMiddlewareWithHistory, sagaMiddleware]
+        .concat(customMiddlewares)
+        .concat(sentryMiddleware);
     const middleware = applyMiddleware(...middlewares);
     const enhancerArgs = [middleware];
 

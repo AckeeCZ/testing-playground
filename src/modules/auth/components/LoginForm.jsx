@@ -1,9 +1,9 @@
 import { React, PropTypes, Form, Field, Input, FelaComponent, Alert } from '../dependencies';
 
-import { rule } from './LoginForm.rule';
+import * as styles from './LoginForm.styles';
 
 const LoginForm = ({ handleSubmit, intl, submitting, error }) => (
-    <FelaComponent rule={rule}>
+    <FelaComponent style={styles.loginForm}>
         <Form onSubmit={handleSubmit}>
             <Field
                 disabled={submitting}

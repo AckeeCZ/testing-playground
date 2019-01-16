@@ -1,10 +1,9 @@
 import { all } from 'redux-saga/effects';
-import { previousLocationSelectorFactory } from 'ackee-frontend-toolkit/lib/modules/routing-history';
-import { combineDependenciesHandlers } from 'ackee-frontend-toolkit/es/sagas/helpers';
+import { routingHistory, combineDependenciesHandlers } from '@ackee/chris';
 
 import routingSaga from './routingSaga';
 
-const previousLocationSelector = previousLocationSelectorFactory('history');
+const previousLocationSelector = routingHistory.previousLocationSelectorFactory('history');
 
 // eslint-disable-next-line
 function* homeSaga() {
@@ -25,8 +24,5 @@ export default function*() {
         initialTrigger: false,
     };
 
-    yield all([
-        routingSaga(handlers, options),
-        routingSaga(postHandlers, options, previousLocationSelector),
-    ]);
+    yield all([routingSaga(handlers, options), routingSaga(postHandlers, options, previousLocationSelector)]);
 }

@@ -10,9 +10,6 @@ export * as Sentry from '@sentry/browser';
 
 export * as Consts from 'Consts';
 
-export {
-    routerMiddlewareWithHistory,
-    connectRouterWithHistory,
-} from '../router';
+export { routerMiddlewareWithHistory, connectRouterWithHistory } from '../router';
 export { reducer as translateReducer } from '../localization';
-export { saga as sentrySaga } from '../sentry';
+export { saga as sentrySaga, sentryMiddleware } from '../sentry';

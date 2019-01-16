@@ -10,6 +10,6 @@ The `services` directory **should only includes**:
 -   [sagas](sagas/README.md)
 -   utilities (optional - doesn't have be part of the services directory)
 
-Constants and configurations should be placed separately, they aren't part of Redux.
+Constants (not talking about actionTypes) and configurations should be placed separately, they aren't part of Redux.
 
 ---

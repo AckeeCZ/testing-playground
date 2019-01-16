@@ -1,8 +1,7 @@
 import React from 'react';
 import Core from 'Modules/core';
 
-import theme from 'Styles/theme';
-import vendors from 'Styles/vendors.css';
+import { theme, vendors } from 'Styles';
 
 import reducers from 'Services/reducers';
 import saga from 'Services/sagas';

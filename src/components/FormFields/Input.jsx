@@ -3,16 +3,22 @@ import PropTypes from 'prop-types';
 import Input from 'antd/lib/input';
 import { FelaComponent } from 'react-fela';
 
-import * as rules from './Input.rules';
+import * as styles from './Input.styles';
 
 const InputField = ({ input, label, id, disabled, meta: { error, touched }, type, withLabel, style, small }) => {
     const showError = touched && error;
 
     return (
-        <FelaComponent showError={showError} small={small} style={rules.formInput}>
+        <FelaComponent
+            {...{
+                showError,
+                small,
+                style: styles.formInput,
+            }}
+        >
             {withLabel && (
-                <FelaComponent style={rules.formLabel}>
-                    <label htmlFor={id}>{label}</label>
+                <FelaComponent style={styles.formLabel}>
+                    {({ className }) => <label htmlFor={id}>{label}</label>}
                 </FelaComponent>
             )}
 

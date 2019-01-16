@@ -1,16 +1,11 @@
 import { React, FormattedMessage, FelaComponent } from '../../dependencies';
 
-export const style = {
-    marginTop: '100px',
-    color: 'red',
-};
+import * as styles from './HomePage.styles';
 
-const HomePage = () => {
-    return (
-        <FelaComponent style={style}>
-            <FormattedMessage id="page.home.content" />
-        </FelaComponent>
-    );
-};
+const HomePage = () => (
+    <FelaComponent style={styles.homePage}>
+        <FormattedMessage id="page.home.content" />
+    </FelaComponent>
+);
 
 export default HomePage;
